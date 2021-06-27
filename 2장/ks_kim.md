@@ -6,7 +6,7 @@
 
 ## Presentation
 
-![표현계층](./kskim/presentation_layer.png)
+![표현계층](ks_kim/presentation_layer.png)
 
 - 사용자의 요청을 받아 응용 영역에 전달하고 응용 영역의 처리 결과를 다시 사용자에게 보여주는 역할을 수행한다.
     - HTTP 요청을 응용 역역이 필요로 하는 형식으로 변환하여 응용 영역에 전달한다.
@@ -18,7 +18,7 @@
 
 ## Application
 
-![응용계층](./kskim/application_layer.png)
+![응용계층](ks_kim/application_layer.png)
 
 - 시스템이 사용자에게 제공해야 할 기능을 구현한다.
     - e.g. 주문 등록, 주문 취소, 상품 상세 조회
@@ -47,7 +47,7 @@
 
 ## Infrastructure
 
-![표현계층](./kskim/infrastructure_layer.png)
+![표현계층](ks_kim/infrastructure_layer.png)
 
 - 논리적인 개념을 표현하기 보다는 실제 구현을 다룬다.
 - e.g.
@@ -60,7 +60,7 @@
 
 # 계층 구조 아키텍처
 
-![표현계층](./kskim/layered_architecture.png)
+![표현계층](ks_kim/layered_architecture.png)
 
 - 계층 구조는 특성상 상위 계층에서 하위 계층으로의 의존만 존재하고, 하위 계층은 상위 계층에 의존하지 않는다.
     - e.g. 표현 계층은 응용 계층에 의존하지 않는다.
@@ -68,7 +68,7 @@
 - 계층구조를 엄격하게 지키려면 상위 계층이 바로 하위 계층에만 의존을 가져야 한다. 하지만, 구현의 편의를 위해 계층 구조를 유연하게 적용한다.
 - 응용 계층은 도메인 계층에 의존하지만, 외부 시스템과의 연동을 위해 인프라스트럭처 계층에 의존하기도 한다.
 
-    ![계층구조상 의존관계](./kskim/layered-architecture-dependencies.png)
+    ![계층구조상 의존관계](ks_kim/layered-architecture-dependencies.png)
 
 - 위와 같은 구조에서는 표현, 응용, 도메인 계층이 인프라스트럭처에 의존적인 구조가 될 수 있다.
     - e.g. 할인 금액 계산이 복잡한 경우 룰 엔진에서 처리
@@ -80,9 +80,9 @@
 
 # DIP
 
-[e.g. 가격 할인 계산 서비스](./kskim/가격_할인_계산_서비스.md)
+[e.g. 가격 할인 계산 서비스](ks_kim/가격_할인_계산_서비스.md)
 
-![DIP-1](./kskim/dip-1.png)
+![DIP-1](ks_kim/dip-1.png)
 
 - 저수준 모듈이 고수준 모듈에 의존하도록 바꾸는 원칙이다.
 - 인터페이스로 상세 구현을 추상화하여 어떤 기술을 사용했는지 직접 드러내지 않음으로써 특정 기술에 대한 의존성을 제거할 수 있다.
@@ -103,11 +103,11 @@
 
 - 단순히 인터페이스와 구현 클래스를 분리하는 것이 아닌, 고수준의 모듈이 저수준 모듈에 의존하지 않도록 하는 것이다.
 
-![DIP-2](./kskim/dip-2.png)
+![DIP-2](ks_kim/dip-2.png)
 
 잘못된 DI 적용 예시
 
-![DIP-3](./kskim/dip-3.png)
+![DIP-3](ks_kim/dip-3.png)
 
 개선한 DI 적용 예시
 
@@ -118,11 +118,11 @@
 
 - 저수준의 인프라스트럭처 계층에 DIP를 적용하면 다음과 같이 고수준 계층에 의존하는 형태가 된다.
 
-![DIP-4](./kskim/dip-4.png)
+![DIP-4](ks_kim/dip-4.png)
 
 - 고수준에 정의된 인터페이스를 상속받아 구현하는 구조가 되므로 고수준 모듈의 변경을 최소화하면서 구현 기술을 유연하게 바꿀 수 있게 된다.
 
-![DIP-5](./kskim/dip-5.png)
+![DIP-5](ks_kim/dip-5.png)
 
 - SMS 알림도 추가되어야 한다면 Notifier를 상속하는 CompositeNotifier 구현체를 만들어 교체할 수 있다.
 - Jpa로 변경하고자 한다면 OrderRepository를 상속하는 JpaOrderRepository 구현체를 만들어 교체할 수 있다.
@@ -157,7 +157,7 @@
 
 ### 애그리거트
 
-![애그리거트](./kskim/aggregate.png)
+![애그리거트](ks_kim/aggregate.png)
 
 - 관련된 엔티티와 밸류 객체를 개념적으로 하나로 묶은 것이다.
 - e.g. 주문 애그리거트 = Order 엔티티 + 주문 목록인 OrderLine 밸류 + 주문자 Orderer 밸류
@@ -173,7 +173,7 @@
 
 ### 리포지터리
 
-![리포지터리](./kskim/repository.png)
+![리포지터리](ks_kim/repository.png)
 
 - RDBMS, NoSQL, 로컬 파일과 같은 물리적인 저장소에 데이터를 저장하기 위한 도메인 모델이다.
 - e.g. DBMS 테이블에서 엔티티 객체를 로딩하거나 저장하는 기능 제공
@@ -214,7 +214,7 @@
 
 # 요청 처리 흐름
 
-![요청 처리 흐름](./kskim/request-handle-flow.png)
+![요청 처리 흐름](ks_kim/request-handle-flow.png)
 
 - 표현 영역
     - 사용자가 전송한 데이터 형식이 올바른지 검사한다.
@@ -243,15 +243,15 @@
 - 아키텍처의 각 영역은 별도 패키지에 위치한다.
 - 패키지 구성에는 한 개의 정답만 있는것이 아니지만 아래와 같이 다양한 방식으로 구성할 수 있다.
 
-![모듈 구성-3](./kskim/module-1.png)
+![모듈 구성-3](ks_kim/module-1.png)
 
 계층 중심적인 패키지 분류
 
-![모듈 구성-2](./kskim/module-2.png)
+![모듈 구성-2](ks_kim/module-2.png)
 
 도메인 중심적인 패키지 분류: 도메인이 큰 경우 하위 도메인별로 모듈을 나눈다.
 
-![모듈 구성-1](./kskim/module-3.png)
+![모듈 구성-1](ks_kim/module-3.png)
 
 하위 도메인을 하위 패키지로 구성한 모듈 구조
 
