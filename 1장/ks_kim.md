@@ -23,14 +23,14 @@
 - 특정 도메인을 개념적으로 표현한 것이다.
 - 여러 관계자들이 동일한 모습으로 도메인을 이해하고 도메인 지식을 공유하는 데 도움이 된다.
 
-![./ks-kim/domain-model.png](ks-kim/domain-model.png)
+![./ks_kim/domain-model.png](ks_kim/domain-model.png)
 
 객체 기반 주문 도메인 모델
 
 - 도메인을 표현하는 방식으로 객체를 이용할 수 있다.
     - 객체를 이용하면 도메인이 제공하는 **기능**과 도메인의 **주요 데이터 구성**을 표현하기 용이하다.
 
-![./ks-kim/state-diagram.png](ks-kim/state-diagram.png)
+![./ks_kim/state-diagram.png](ks_kim/state-diagram.png)
 
 상태 다이어그램을 이용한 주문 상태 모델링
 
@@ -54,7 +54,7 @@
 
 - 크게 네 개의 계층으로 구성된다.
 
-![./ks-kim/domain-model-architecture.png](ks-kim/domain-model-architecture.png)
+![./ks_kim/domain-model-architecture.png](ks_kim/domain-model-architecture.png)
 
 ### ui (=presentation)
 
